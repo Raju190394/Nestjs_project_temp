@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dashmin Palette */
+    --background: 210 29% 97%;
+    /* #F3F6F9 - Light Gray Background */
+    --foreground: 0 0% 46%;
+    /* #757575 - Gray Text */
+
+    --card: 0 0% 100%;
+    /* #FFFFFF */
+    --card-foreground: 0 0% 46%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 46%;
+
+    --primary: 203 100% 50%;
+    /* #009CFF - Dashmin Blue */
+    --primary-foreground: 0 0% 100%;
+    /* White text on blue */
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 46%;
+
+    --muted: 210 29% 97%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 203 100% 95%;
+    /* Very light blue for hover/active backgrounds */
+    --accent-foreground: 203 100% 50%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 203 100% 50%;
+
+    --radius: 0.25rem;
+    /* 4px - Square-ish look */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-slate-800 font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none bg-white border border-border text-foreground hover:bg-slate-50;
+  }
+
+  .card {
+    @apply rounded shadow-sm border-none bg-card text-card-foreground p-6;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded border border-input bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
